@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\ProductDataProvider" type="Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\Modifier\Pool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="eav" xsi:type="array">
+                    <item name="class" xsi:type="string">Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\Modifier\CustomAttributes</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="websites" xsi:type="array">
+                    <item name="class" xsi:type="string">Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\Modifier\Websites</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+                <item name="system" xsi:type="array">
+                    <item name="class" xsi:type="string">Dmytro\CustomCatalog\Ui\DataProvider\Product\Form\Modifier\Config</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
