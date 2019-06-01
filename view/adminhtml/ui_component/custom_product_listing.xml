@@ -90,14 +90,10 @@
         </column>
         <actionsColumn name="actions" class="Dmytro\CustomCatalog\Ui\Component\Listing\Columns\CustomProductActions" sortOrder="50">
             <settings>
+<!--                need this to make row clickable but this shouldn't be visible according to the task-->
+                <visible>false</visible>
                 <indexField>entity_id</indexField>
             </settings>
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-<!--                    need this to make row clickable but this shouldn't be visible according to the task-->
-                    <item name="visible" xsi:type="boolean">false</item>
-                </item>
-            </argument>
         </actionsColumn>
     </columns>
 </listing>

@@ -73,7 +73,7 @@ class UpdateAttributes
         $message = $this->_jsonSerializer->unserialize($message);
         $productId = $message['product_id'] ?? false;
 
-        if (true) {
+        if (!$productId) {
             $this->_logger->critical(
                 __('Missing product id in update attribute action.')
             );
